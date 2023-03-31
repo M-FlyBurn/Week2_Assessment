@@ -102,17 +102,50 @@ console.log(`This menu item is an ${category}.`)
 */
 
 //CODE HERE
-const foodArr = ['Doubles', 'Roti', 'Curry Chicken', 'Bake and Shark']
+const foodArr = [
 
-    let triniFood = {
+    {
     name: 'Doubles',
     price: 2.50,
     category: 'appetizer',
     popularity: 1,
-    rating: 1,
-    tags: ['small-bite', 'vegan', 'savory']
+    rating: 5,
+    tags: ['small-bite', 'vegan', 'savory', 'sweet and spicy']
+    },
+    {
+    name: 'Roti',
+    price: 14.99,
+    category: 'entree',
+    popularity: 2,
+    rating: 5,
+    tags: ['meal', 'bussupshot', 'dahlpuri']
+     },
+     {
+    name: 'Bake and Shark',
+    price: 9.99,
+    category: 'entree',
+    popularity: 3,
+    rating: 5,
+    tags: ['meal', 'pineapples', 'sweet and spicy', 'pepper sauce']
+    },
+    {
+    name: 'Curry Chicken',
+    price: 17.99,
+    category: 'entree',
+    popularity: 4,
+    rating: 5,
+    tags: ['meal', 'savory', 'rice and peas']
+    },
+    {
+    name: 'Aloopie',
+    price: 2.50,
+    category: 'appetizer',
+    popularity: 5,
+    rating: 5,
+    tags: ['small-bite', 'savory', 'vegan']
     }
-    
+
+]
 //////////////////PROBLEM 4////////////////////
 /* 
     Let's filter the food objects according
@@ -126,9 +159,12 @@ const foodArr = ['Doubles', 'Roti', 'Curry Chicken', 'Bake and Shark']
 */
 
 //CODE HERE
+const filtered = element =>element.tags.includes('savory')
 
+const filteredFood = foodArr.filter(filtered)
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+console.log(filteredFood)
+
 
 
 
@@ -172,7 +208,12 @@ const foodArr = ['Doubles', 'Roti', 'Curry Chicken', 'Bake and Shark']
 */
 
 //CODE HERE
-
+const filterByProperty = (property, number, type) =>{
+    if(type === 'above'){
+        return foodArr.filter(elem => elem[property] > number)
+    } else{ return foodArr.filter(item => item[property]< number)
+    }
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -182,3 +223,5 @@ const foodArr = ['Doubles', 'Roti', 'Curry Chicken', 'Bake and Shark']
 */
 
 //CODE HERE
+
+console.log(filterByProperty('price', 10, 'below'))

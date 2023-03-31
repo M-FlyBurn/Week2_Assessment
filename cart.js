@@ -54,7 +54,12 @@ const cart = [
 */
 
 //CODE HERE
-
+const calcFinalPrice = (cart, coupon, tax) =>{
+    let totalTax = cart * tax
+    let total = cart + totalTax
+    total -= coupon
+    return total
+}
 
 
 //////////////////PROBLEM 3////////////////////
@@ -79,6 +84,8 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+ 
+    A name of customer, email, phone number and address
 
 */
 
@@ -88,3 +95,9 @@ const cart = [
 */
 
 //CODE HERE
+let customer = {
+    name: 'Tom Cat',
+    email: "tomcat@yahoo.com",
+    phoneNumber: 5551313,
+    address:'765 Oakview Dr, Wheaton, MD, 20902'
+}
